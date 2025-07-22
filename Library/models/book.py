@@ -1,0 +1,30 @@
+from odoo import models, fields
+from datetime import date
+
+class Book(models.Model):
+    _name = "library.book"
+    _description = "Test Model"
+
+    name = fields.Char(default ="Book", required = True)
+    date = fields.Date(string="Publication Date", default=fields.Date.today())
+    pages = fields.Integer(string="Number of Pages")
+    author = fields.Char(string="Author")
+    publisher = fields.Char(string="Publisher")
+    price = fields.Float(string="Price", digits=(6,2))
+    cover_image = fields.Binary(string="Cover Image")
+    available = fields.Boolean(string="Available", default=True, copy=False)
+    category = fields.Selection(
+        selection=[
+            ('fiction', 'Fiction'),
+            ('non-fiction', 'Non-Fiction'),
+            ('biography', 'Biography'),
+            ('technical', 'Technical'),
+            ('action', 'Action'),
+            ('romance', 'Romance'),
+            ('mystery', 'Mystery'),
+        ],
+        string="Category"
+    )
+    rating = fields.Float(string="Rating", digits=(3,1),  copy=False)
+
+    fandom_id = fields.Many2one("library.fandom")

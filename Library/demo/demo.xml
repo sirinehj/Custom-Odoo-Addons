@@ -1,0 +1,8 @@
+<odoo>
+    <data>
+        <record id="book_1" model="library.book">
+            <field name="name">Book number 1</field>
+            <field name="pages">57</field>
+        </record>
+    </data>    
+</odoo>

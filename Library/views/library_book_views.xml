@@ -1,0 +1,82 @@
+<odoo>
+
+    <record id="Library_book_search_view" model="ir.ui.view">
+        <field name="name">library.book.view.search</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="available" invisible="1"/>
+                <field name="category"/>
+                <filter name="filter_state_name" string="Available" domain="[('available', '=', True)]"/>
+                <filter name="group_by_category" string="Category" context="{'group_by' : 'category'}"/>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="Library_book_form_view" model="ir.ui.view">
+        <field name="name">library.book.view.form</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <field name="cover_image" widget="image" class="oe_avatar"/>
+                        </group>
+                        <group>
+                            <field name="available"/>
+                            <field name="rating"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Details">
+                            <group>
+                                <field name="author"/>
+                                <field name="publisher"/>
+                                <field name="date"/>
+                                <field name="pages"/>
+                                <field name="category"/>
+                                <field name="price"/>
+                            </group>
+                        </page>
+                        <page string="Additional Info">
+                            <group>
+                                <field name="rating" readonly="1"/>
+                                <field name="available" readonly="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>    
+        </field>
+    </record>
+
+    <record id="Library_book_list_view" model="ir.ui.view">
+        <field name="name">library.book.view.list</field>
+        <field name="model">library.book</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="author"/>
+                <field name="publisher"/>
+                <field name="date"/>
+                <field name="pages"/>
+                <field name="price"/>
+                <field name="available" widget="boolean"/>
+                <field name="rating"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="test_record" model="ir.actions.act_window">
+        <field name="name">Books</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
