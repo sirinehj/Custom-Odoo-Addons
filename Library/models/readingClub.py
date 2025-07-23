@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 
 class ReadingClub(models.Model):
     _name = "library.reading_club"
@@ -16,6 +16,7 @@ class ReadingClub(models.Model):
         compute="_compute_books_discussed"
     )
     
+    @api.depends('meeting_ids.club_id') 
     def _compute_books_discussed(self):
         for club in self:
             club.book_ids = club.meeting_ids.mapped('book_id')

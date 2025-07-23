@@ -1,4 +1,4 @@
-from odoo import models, fields
+from odoo import models, fields, api
 from datetime import date
 
 class Book(models.Model):
@@ -34,9 +34,11 @@ class Book(models.Model):
     )
     reading_club_count = fields.Integer(
         string="Reading Clubs", 
-        compute="_compute_reading_club_count"
+        compute="_compute_reading_club_count",
+        store=True
     )
     
+    @api.depends('meeting_ids.book_id')
     def _compute_reading_club_count(self):
         for book in self:
             book.reading_club_count = len(book.meeting_ids.mapped('club_id'))
