@@ -1,6 +1,6 @@
 # Odoo Custom Addons – Learning & Experiments
 
-This repository contains my personal journey into Odoo development. All code here is tested on Odoo 18.0 and built within the `custom_addons` directory, which I use for hands-on learning and prototyping.
+This repository contains a journey into Odoo development. All code here is tested on Odoo 18.0 and built within the `custom_addons` directory, which was used for hands-on learning and prototyping.
 
 ## 🛠️ What's inside?
 
