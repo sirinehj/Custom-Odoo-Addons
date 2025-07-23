@@ -1,0 +1,28 @@
+<!--
+demo file to show a demo data
+it need to be set the path in __manifest__.py on demo:[]
+-->
+<!--
+    odoo tag is like html 
+-->
+<odoo>
+    <!--
+        data tag it will have all the data inside it
+    -->
+    <data>
+    <!--
+        each record inside the data is a field of the model
+        it need an unique id and the model created for me books
+        model= the _name in the model file
+    -->
+        <record id="book 1" model="Books">
+        <!--
+        now the fields of the model (in my case books)
+        name= to model fields
+        -->
+            <field name="title">Alice in her magic world</field>
+            <field name="description">Alice adventure to become a high level healer</field>
+            <field name="copies">2</field>
+        </record>
+    </data>
+</odoo>

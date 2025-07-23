@@ -1,0 +1,8 @@
+<odoo>
+    <menuitem id="root_level_of_model_b_one2many" name="Model B one2many">
+        <menuitem id="second_level_of_model_b_one2many" name="Model B one2many menu view">
+            <menuitem id="third_level_of_model_b_one2many" name="Model B menu items" action="model_b_one2many_menu_view">
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

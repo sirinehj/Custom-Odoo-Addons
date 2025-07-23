@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="root_level_of_app" name="first_test_model">
+        <menuitem id="second_level_of_app" name="first_test_model_view_menu_nav">
+            <menuitem id="thrid_level_of_app" name="menu_items" action="first_test_model_menu">
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

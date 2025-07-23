@@ -1,0 +1,5 @@
+<odoo>
+    <record id="model_a_many_2_one_manager" model="res.groups">
+        <field name="name">model a many2one managers</field>
+    </record>
+</odoo>
