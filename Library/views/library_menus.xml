@@ -1,7 +1,11 @@
 <odoo>
     <menuitem id="root_level" name="Root">
         <menuitem id="second_level" name="Library">
-            <menuitem id="third_level" name="Third" action="test_record"/>
+            <menuitem id="third_level" name="Books" action="test_record"/>
+            <menuitem id="reading_club_menu" name="Reading Clubs" action="action_reading_club"/>
+            <menuitem id="meetings_menu" name="Meetings" action="action_meeting"/>
         </menuitem>
     </menuitem>
+
+    
 </odoo>

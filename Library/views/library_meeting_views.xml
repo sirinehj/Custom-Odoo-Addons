@@ -1,0 +1,50 @@
+<odoo>
+    <record id="meeting_search_view" model="ir.ui.view">
+        <field name="name">meeting.view.search</field>
+        <field name="model">library.meeting</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="book_id"/>
+                <field name="club_id"/>
+                <field name="meeting_date"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="meeting_form_view" model="ir.ui.view">
+        <field name="name">meeting.view.form</field>
+        <field name="model">library.meeting</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="club_id"/>
+                        <field name="book_id"/>
+                        <field name="meeting_date"/>
+                        <field name="attendees"/>
+                    </group>
+                    <field name="notes"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="meeting_list_view" model="ir.ui.view">
+        <field name="name">meeting.view.list</field>
+        <field name="model">library.meeting</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="club_id"/>
+                <field name="book_id"/>
+                <field name="meeting_date"/>
+                <field name="attendees"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_meeting" model="ir.actions.act_window">
+        <field name="name">Meetings</field>
+        <field name="res_model">library.meeting</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

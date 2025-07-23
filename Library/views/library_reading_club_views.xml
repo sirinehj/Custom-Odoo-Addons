@@ -1,0 +1,56 @@
+<odoo>
+    <record id="reading_club_search_view" model="ir.ui.view">
+        <field name="name">reading.club.view.search</field>
+        <field name="model">library.reading_club</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="location"/>
+                <filter name="active_clubs" string="Active" domain="[('member_count', '>', 0)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="reading_club_form_view" model="ir.ui.view">
+        <field name="name">reading.club.view.form</field>
+        <field name="model">library.reading_club</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="location"/>
+                        <field name="founding_date"/>
+                        <field name="member_count"/>
+                    </group>
+                    <field name="meeting_ids">
+                        <list>
+                            <field name="book_id"/>
+                            <field name="meeting_date"/>
+                            <field name="attendees"/>
+                        </list>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="reading_club_list_view" model="ir.ui.view">
+        <field name="name">reading.club.view.list</field>
+        <field name="model">library.reading_club</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="location"/>
+                <field name="member_count"/>
+                <field name="founding_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_reading_club" model="ir.actions.act_window">
+        <field name="name">Reading Clubs</field>
+        <field name="res_model">library.reading_club</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
