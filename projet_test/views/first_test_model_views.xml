@@ -13,11 +13,11 @@
         <field name="name">Testing_01 tree view</field>
         <field name="model">first.test_model</field>
         <field name="arch" type="xml">
-            <list string="Testing_01 tree">
+            <list string="Testing_01 tree" decoration-success="todays_day==todays">
                 <button string="Warning" type="object" name="warning_action"/>
                 <button string="a=20 b=20" type="object" name="init_a_b"/>
                 <!--<button string="froming" type="object" name="froming_view"/>-->
-                <field name="name" />
+                <field name="name"/>
                 <field name="a"/>
                 <field name="b"/>
                 <field name="suming"/>

@@ -16,6 +16,8 @@ class Books(models.Model):
     _description="Books ...."
     #model fileds
     #string:show field name
+    #required:to make field require
+    #readonly:to make field readonly
     title=fields.Char(string="Book's title",required=True,default="book's 1 title is 1")
     description=fields.Text(string="Book's topic",required=True,default="book's 1 blablabla")
     copies=fields.Integer(string="Book's copies",required=True,default=1)

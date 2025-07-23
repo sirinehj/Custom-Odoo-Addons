@@ -32,10 +32,22 @@
         -->
         <field name="arch" type="xml">
             <!--odoo update tree tag to list tag-->
-            <list>
+               <!--we can change the color of list,form fields or field by field 
+               by adding the attribute decoration-name="condition or var"
+                decoration-bf
+                decoration-it
+                decoration-danger
+                decoration-info
+                decoration-muted
+                decoration-primary
+                decoration-success
+                decoration-warning
+                here i will make list(tree) decoration-success if todays_day==todays-->
+            <list string="Testing_01 tree" decoration-success="todays_day==todays">
                 <!--
                     model attributes to show
                 -->
+                <!-- some attributes like required="1" and readonly="1" won't work -->
                 <field name="title"></field>
                 <field name="description"></field>
                 <field name="copies"></field>
