@@ -1,0 +1,34 @@
+<odoo>
+<!-- TREE view -->
+    <record id="estate_type_tree_view" model="ir.ui.view">
+        <field name="name">real.estate.type.list</field>
+        <field name="model">real.estate.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- FORM view -->
+    <record id="estate_type_form_view" model="ir.ui.view">
+        <field name="name">real.estate.type.form</field>
+        <field name="model">real.estate.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="estate_type_action" model="ir.actions.act_window">
+        <field name="name">Estate Types</field>
+        <field name="res_model">real.estate.type</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,14 @@
+<odoo>
+    <menuitem id="root_level" name="Root">
+        <menuitem id="second_level" name="Estate">
+            <menuitem id="third_level" name="Real Estate" action="test_record"/>
+        </menuitem>
+
+        <menuitem id="settings_level" name="Settings">
+            <menuitem id="type_level" name="Type" action="estate_type_action"/>
+            <menuitem id="tag_level" name="Tag" action="estate_tag_action" />
+        </menuitem>
+
+        <menuitem id="offer_level" name="Offers" action="estate_offer_action"/>
+    </menuitem>
+</odoo>
