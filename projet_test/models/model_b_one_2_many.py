@@ -15,3 +15,14 @@ class Model_b_one_2_many(models.Model):
     def _maxing(self):
         for i in self:
             i.max_fact=sum(i.model_a_ids.mapped("fact"))*i.numb
+    #2 manuel ordering you let the user have the freedom of ordering:
+    #_order="sequence desc"
+    #sequence=fields.Integer(default=1)
+    #then go to the view.xml inside the list/tree tag or form tag on the top add a field tag like this:
+    #<list string="tree view"> 
+    #   <field name="sequence" widget="handel"/>
+    #   ... 
+    # </list>
+    #and model_b_one_2_many for manuel oredering
+    _order="sequence desc"
+    sequence=fields.Integer(default=1)

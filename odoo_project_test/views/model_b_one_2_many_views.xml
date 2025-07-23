@@ -12,6 +12,19 @@
         <field name="model">model.b.one2many</field>
         <field name="arch" type="xml">
             <list string="Model B one2many tree list">
+              <!--#2 manuel ordering you let the user have the freedom of ordering:
+                    #_order="sequence desc"
+                    #sequence=fields.Integer(default=1)
+                    #then go to the view.xml inside the list/tree tag or form tag on the top add a field tag like this:
+                    #<list string="tree view"> 
+                    #   <field name="sequence" widget="handel"/>
+                    #   ... 
+                    # </list>
+                    #and model_b_one_2_many for manuel oredering
+
+                    it dose nothing for me
+                    -->
+                  <field name="sequence" widget="handel"/>
                   <field name="numb"/>
                   <field name="model_a_ids"/>
                    <field name="max_fact"/>

@@ -11,7 +11,13 @@
         <field name="name">Testing_01 Model B many2many tree view</field>
         <field name="model">model.b.many2many</field>
         <field name="arch" type="xml">
-            <list string="Model B many2many tree list">
+         <!--#another way to use is in the view.xml in the list/form view(tree) add 
+            the attribute default_order:
+            #<list string="tree view" default_order="var desc"> ... </list>
+            #or
+            #<list string="tree view" default_order="var"> ... </list>
+            #i will try this in model_b_many_2_many view-->
+            <list string="Model B many2many tree list" default_order="numb">
                     <field name="numb"/>
                     <field name="model_a_ids"/>
                       <!--fields tags can have attribute widget to have different form of views

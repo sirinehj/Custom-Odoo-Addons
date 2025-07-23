@@ -66,3 +66,22 @@ class First_test_model(models.Model):
         for i in self:
             if(i.todays_day != fields.Date.today()):
                 raise ValidationError(_("today is:"+str(fields.Date.today())))
+
+    #to have order the data in view we have 2 diff ways model ordering and manuel ordering
+    #all those odering will use the _order declartion in the model it's like:
+    #1 model ordering:
+    #_order="var1,var2,... desc" => this will list data from var1 to varX in desc order
+    #another way to use is in the view.xml in the list/form view(tree) add the attribute default_order:
+    #<list string="tree view" default_order="var desc"> ... </list>
+    #or
+    #<list string="tree view" default_order="var"> ... </list>
+    #but in 2: manuel ordering you let the user have the freedom of ordering:
+    #_order="sequence desc"
+    #sequence=fields.Integer(default=1)
+    #then go to the view.xml inside the list/tree tag or form tag on the top add a field tag like this:
+    #<list string="tree view"> 
+    #   <field name="sequence" widget="handel"/>
+    #   ... 
+    # </list>
+    #i will use model_a_one_2_many for model oredering
+    #and model_b_one_2_many for manuel oredering

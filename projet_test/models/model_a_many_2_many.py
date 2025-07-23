@@ -7,4 +7,4 @@ class Model_a_many_2_many(models.Model):
 
     name=fields.Char(string="Naming A:",required=True)
 
-   
+    
