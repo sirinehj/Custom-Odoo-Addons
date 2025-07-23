@@ -27,4 +27,16 @@ class Book(models.Model):
     )
     rating = fields.Float(string="Rating", digits=(3,1),  copy=False)
 
-    fandom_id = fields.Many2one("library.fandom")
+    meeting_ids = fields.One2many(
+        "library.meeting", 
+        "book_id", 
+        string="Discussed In Meetings"
+    )
+    reading_club_count = fields.Integer(
+        string="Reading Clubs", 
+        compute="_compute_reading_club_count"
+    )
+    
+    def _compute_reading_club_count(self):
+        for book in self:
+            book.reading_club_count = len(book.meeting_ids.mapped('club_id'))
