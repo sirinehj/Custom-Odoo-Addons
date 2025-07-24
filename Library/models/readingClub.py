@@ -20,3 +20,4 @@ class ReadingClub(models.Model):
     def _compute_books_discussed(self):
         for club in self:
             club.book_ids = club.meeting_ids.mapped('book_id')
+

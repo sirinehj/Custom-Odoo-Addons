@@ -10,6 +10,16 @@ class Meeting(models.Model):
     attendees = fields.Integer(string="Attendees Count")
     notes = fields.Text(string="Discussion Notes")
     
+    state = fields.Selection(
+        [('draft', 'Draft'), ('accepted', 'Accepted')],
+        default='draft',
+        string="Status"
+    )
+    
+    def _valid_field_parameter(self, field, name):
+        """Allow tracking parameter for state field"""
+        return name == 'tracking' or super()._valid_field_parameter(field, name)
+
     @api.onchange('book_id')
     def _onchange_book_id(self):
         """Auto-generate discussion notes template when book is selected"""
@@ -28,11 +38,15 @@ class Meeting(models.Model):
                     'message': f"A discussion template for '{self.book_id.name}' has been prepared. You can modify it as needed."
                 }
             }
-        else:
-            self.notes = False
-            return {
-                'warning': {
-                    'title': "Notes Cleared",
-                    'message': "Discussion notes have been reset since no book is selected."
-                }
+
+
+    def action_accept(self):
+        """Mark meeting as accepted"""
+        self.write({'state': 'accepted'})
+        return {
+            'effect': {
+                'fadeout': 'slow',
+                'message': 'Meeting Accepted!',
+                'type': 'rainbow_man',
             }
+        }

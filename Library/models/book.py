@@ -22,6 +22,7 @@ class Book(models.Model):
             ('action', 'Action'),
             ('romance', 'Romance'),
             ('mystery', 'Mystery'),
+            ('horror', 'Horror'),
         ],
         string="Category"
     )

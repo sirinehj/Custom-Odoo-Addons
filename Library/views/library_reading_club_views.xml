@@ -25,9 +25,19 @@
                     </group>
                     <field name="meeting_ids">
                         <list>
+                            <field name="club_id" invisible="1"/>
                             <field name="book_id"/>
                             <field name="meeting_date"/>
                             <field name="attendees"/>
+                            <field name="state" widget="statusbar"/>
+                            <button 
+                                name="action_accept" 
+                                icon="fa-check" 
+                                type="object"
+                                string="Accept"
+                                class="oe_highlight"
+                                attrs="{'invisible': [('state', '=', 'accepted')]}"
+                            />
                         </list>
                     </field>
                 </sheet>
