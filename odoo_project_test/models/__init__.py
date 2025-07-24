@@ -5,3 +5,6 @@ from . import books
 from . import model_a_many_2_one,model_b_many_2_one
 from . import model_a_one_2_many,model_b_one_2_many
 from . import model_a_many_2_many,model_b_many_2_many
+from . import model_crud_inheritance
+from . import model_prototype_inheritance,model_prototype_inheritance1,model_prototype_inheritance2
+from . import model_delegation_inheritance1,model_delegation_inheritance2
