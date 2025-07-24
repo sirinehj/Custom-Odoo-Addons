@@ -17,6 +17,13 @@
             in here will have a tree view (no more trees now its list) and a form view
         -->
         <field name="view_mode">list,form</field>
+    <!--we can set a default activated filter by adding a new field
+        that named context 
+        inside the field tag we will have {'search_default_and the name of 
+        the filter':True}
+         with true value to activate it for me it will be like:
+        <field name"context">{'search_default_filter_available':True}</field>-->
+        <field name="context">{'search_default_filter_available':True}</field>
     </record>
     <!--
         showing models fields in tree view with the model ir.ui.view
@@ -167,7 +174,14 @@
                 <!--
                     giving user search editable fields
                 -->
-                <field name="title"/>
+                 <!--adding the attribute filter_domain to field here will help the 
+                 user finding something like he/she
+                is searching about in a var/vars
+                filter_domain="[('var','ilike',self)]"
+                filter_domain=[] tab of conditions
+                ilike key is like'=' or something like
+                self is the user input-->
+                <field name="title" filter_domain="[('title','ilike',self)]"/>
                 <field name="available" invisible="1"/>
                 <!--
                     filtring the search with the domain

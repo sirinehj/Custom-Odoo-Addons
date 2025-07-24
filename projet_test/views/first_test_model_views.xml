@@ -5,7 +5,7 @@
         <field name="res_model">first.test_model</field>
         <field name="view_mode">list,form</field>
         <field name="type">ir.actions.act_window</field>
-        
+        <field name="context">{'search_default_filter_group_by_name_of_model':True}</field>
     </record>
     
     <!--tree view-->
@@ -72,7 +72,7 @@
         <field name="model">first.test_model</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="name" filter_domain="[('name','ilike',self)]"/>
                 <filter name="filter_state_by_new_name_of_model" string="New_name_of_Testing_01" domain="[('state','=','draft')]"/>
                 <filter name="filter_state_by_confirmed_name_of_model" string="Confirmed_name_of_Testing_01" domain="[('state','=','confirmed')]"/>
                 <filter name="filter_state_by_done_name_of_model" string="Done_name_of_Testing_01" domain="[('state','=','done')]"/>
