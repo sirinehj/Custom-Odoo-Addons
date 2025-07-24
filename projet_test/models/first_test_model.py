@@ -47,13 +47,17 @@ class First_test_model(models.Model):
         for i in self:
             i.a=20
             i.b=20
-  #  def forming_view(self):
-  #      return {
-  #          "type":"ir.actions.act_window",
-  #          "name":"forming button",
-  #          "res_model":"first.test_model",
-  #          "view_mode":"form"
-  #      }
+    #i will try to put this button on the view
+    #never put a button on a menu
+    #it always crush
+   # def forming_view(self):#
+   #       return {
+   #          "type":"ir.actions.act_window",
+   #          "name":"forming button",
+   #         "res_model":"first.test_model",
+   #          "view_mode":"form",
+   #          "target":"current"
+   #      }
 
 
     _sql_constraints=[
