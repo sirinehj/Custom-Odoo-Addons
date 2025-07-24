@@ -16,9 +16,7 @@ class Model_a_one_2_many(models.Model):
     #1 model ordering:
     #_order="var1,var2,... desc" => this will list data from var1 to varX in desc order
     
-    _order="name,fact,model_b_one2many_id desc"
-
-    #well for me it looks useless
+    _order="fact,name,model_b_one2many_id desc"
 
     #another way to use is in the view.xml in the list/form view(tree) add the attribute default_order:
     #<list string="tree view" default_order="var desc"> ... </list>

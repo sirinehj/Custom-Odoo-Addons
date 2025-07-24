@@ -24,7 +24,7 @@
 
                     it dose nothing for me
                     -->
-                  <field name="sequence" widget="handel"/>
+                  <field name="sequence" widget="handle"/>
                   <field name="numb"/>
                   <field name="model_a_ids"/>
                    <field name="max_fact"/>
