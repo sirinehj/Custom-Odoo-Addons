@@ -7,6 +7,7 @@
                 <field name="book_id"/>
                 <field name="club_id"/>
                 <field name="meeting_date"/>
+                <field name="state" filter_domain="[('state', '=', self)]"/>
             </search>
         </field>
     </record>
@@ -22,6 +23,7 @@
                         <field name="book_id"/>
                         <field name="meeting_date"/>
                         <field name="attendees"/>
+                        <field name="state" widget="statusbar"/>
                     </group>
                     <field name="notes"/>
                 </sheet>
