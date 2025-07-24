@@ -44,6 +44,15 @@
         <field name="arch" type="xml">
             <form string="Model b one2many form">
                 <sheet>
+                    <div class="oe_button_box">
+                        <button name="action_open_model_a_ids"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-list"
+                            string="Model A">
+                                <field name="model_b_one2many_count" widget="line_count"/>
+                        </button>    
+                    </div>
                     <group>
                         <field name="numb"/>
                         <field name="model_a_ids"/>
