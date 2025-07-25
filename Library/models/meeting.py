@@ -3,6 +3,7 @@ from odoo import fields, models, api
 class Meeting(models.Model):
     _name = "library.meeting"
     _description = "Reading club meetings"
+    _order = "meeting_date desc"
     
     club_id = fields.Many2one("library.reading_club", required=True, ondelete="cascade")
     book_id = fields.Many2one("library.book", string="Book Discussed")

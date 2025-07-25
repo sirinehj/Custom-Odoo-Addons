@@ -3,7 +3,10 @@ from odoo import models, fields, api
 class ReadingClub(models.Model):
     _name = "library.reading_club"
     _description = "Book reading clubs"
+    _order = "sequence desc"
     
+
+    sequence = fields.Integer(default=1)
     name = fields.Char(required=True)
     location = fields.Char()
     founding_date = fields.Date()
