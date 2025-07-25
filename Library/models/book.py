@@ -38,8 +38,26 @@ class Book(models.Model):
         compute="_compute_reading_club_count",
         store=True
     )
-    
+
+    _sql_constraints = [
+        ("check_price", "CHECK(price > 0)", "Price should be positive."),
+        ("check_unique_name", "UNIQUE(name)", "Name must be unique.")
+    ]
+        
     @api.depends('meeting_ids.book_id')
     def _compute_reading_club_count(self):
         for book in self:
             book.reading_club_count = len(book.meeting_ids.mapped('club_id'))
+
+
+    @api.constrains('pages', 'date')
+    def _check_constraints(self):
+        for book in self:
+            if book.pages and book.pages <= 0:
+                raise ValidationError("Number of pages must be positive!")
+            if book.date and book.date > fields.Date.today():
+                raise ValidationError("Publication date cannot be in the future!")
+            if book.rating and (book.rating < 0 or book.rating > 10):
+                raise ValidationError("Rating must be between 0 and 10!")
+
+        

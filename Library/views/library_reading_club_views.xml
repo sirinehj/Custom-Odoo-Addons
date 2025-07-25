@@ -50,6 +50,7 @@
         <field name="model">library.reading_club</field>
         <field name="arch" type="xml">
             <list>
+                <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="location"/>
                 <field name="member_count"/>
