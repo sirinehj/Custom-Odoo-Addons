@@ -1,0 +1,8 @@
+<odoo>
+    <menuitem id="root_level_menu_model_crud_inheritance" name="Model CRUD">
+        <menuitem id="second_level_menu_model_crud_inheritance" name="Model CRUD menu">
+            <menuitem id="theird__level_menu_model_crud_inheritance" name="Model CRUD elements" action="model_crud_inheritance_menu">
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

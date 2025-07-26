@@ -1,0 +1,23 @@
+<!--so first thing here we have syntax like-->
+<!--
+    <templates>
+        this t could be the first templete of templetes and it has a name in t-name attribute
+        remember to put the technical name of the model in odoo apps we can see it in the developer mode
+        then the name of the template is like project_test_frontend.Exemple
+        and the owl="1" is to use the owl framework in odoo
+        <t t-name="model-templete/project-templete" owl="1">
+            it like a content here
+            <p>Text here</p>
+            xml files in odoo can use bootstrap and fa-icons
+            <button class="btn btn-primary">click me</button>
+        </t>
+    </templates>
+    at the end we go to the js file generally the js and xml files here looks that they have 
+    the same name so exemple.js and exemple.xml
+-->
+<templates>
+  <t t-name="project_test_frontend.Exemple" owl="1">
+    <p>Text here</p>
+    <button class="btn btn-primary">click me</button>
+  </t>
+</templates>

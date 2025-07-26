@@ -1,0 +1,74 @@
+<odoo>
+    <!--menu view-->
+    <record id="model_delegation_inheritance2_menu" model="ir.actions.act_window">
+        <field name="name">Model Delegation2</field>
+        <field name="res_model">model.delegation2</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <!--tree list view-->
+    <record id="model_delegation_inheritance2_list" model="ir.ui.view">
+        <field name="name">Model Delegation2 list</field>
+        <field name="model">model.delegation2</field>
+        <field name="arch" type="xml">
+            <list>  
+                <field name="dele1_id" />
+                <field name="dele2"/>
+            </list>
+        </field>
+    </record>
+    <!--form view-->
+    <record id="model_delegation_inheritance2_form" model="ir.ui.view">
+        <field name="name">Model Delegation2 form</field>
+        <field name="model">model.delegation2</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="dele1_id" />
+                    </group>
+                    
+                    <group>
+                        <field name="dele2" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--i will comment this bc it crush the app and no tuto about it-->
+    <!--here we will create an inheritance new view-->
+    <!--
+    <record id="root_levl_model_delegation_inheritance2_inhit" model="ir.ui.view">
+        <field name="name">Model Delegation2 inhit</field>
+        <field name="model">model.delegation2</field>
+        -->
+        <!--inherite view has a special field that has the id in name attribute with ref
+        id will be the id of the view in the xml and the ref will have the model of it with it id this can 
+        also work with odoo models too-->
+        <!--
+        <field name="model_delegation_inheritance2_list" ref="model.delegation2_model_delegation_inheritance2_list">
+            <field name="arch" type="xml">
+            -->
+                <!--now the special tag xpath
+                it has expr attribute and position attribute
+                in the expr we will find element by field/class
+                expr="//field[@name='field_name_here']"
+                expr="//div[hasclass('class_name')]"
+                for position it will place the content before after replace inside(to the end)
+                exp position="after"
+                but also it can be position="attributes" and this will controle all the field attributes of 
+                xpath-->
+              <!--<xpath expr="//field[@name='del2']" position="inside">
+                  -->
+                    <!--if the position="attributes" here
+                    we will have attributes tags that have attributes name that takes
+                    attributes fields and set it to 0 or 1 exp:
+                    <attribute name="invisible">0</attribute>
+                    <attribute name="readonly">1</attribute>
+                    <attribute name="required">0</attribute>-->
+                <!--
+                </xpath>
+            </field>
+        </field>
+    </record>
+    -->
+</odoo>

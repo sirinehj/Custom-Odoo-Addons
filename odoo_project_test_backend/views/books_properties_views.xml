@@ -1,0 +1,206 @@
+<!--
+    this file will have all the views of the model
+    menu window
+-->
+<odoo>
+    <!--
+        record tag will have and id with the model of ir.actions.act_window for the menu
+    -->
+    <record id="test_record" model="ir.actions.act_window">
+    <!--
+        fields will have menu content 
+    -->
+        <field name="name">Test</field>
+        <field name="res_model">Books</field>
+        <!--
+            and the last field will be for the type of view 
+            in here will have a tree view (no more trees now its list) and a form view
+        -->
+        <field name="view_mode">list,form</field>
+    <!--we can set a default activated filter by adding a new field
+        that named context 
+        inside the field tag we will have {'search_default_and the name of 
+        the filter':True}
+         with true value to activate it for me it will be like:
+        <field name"context">{'search_default_filter_available':True}</field>-->
+        <field name="context">{'search_default_filter_available':True}</field>
+    </record>
+    <!--
+        showing models fields in tree view with the model ir.ui.view
+    -->
+    <record id="books_tree_view" model="ir.ui.view">
+        <!--
+            fields to describe the views
+        -->
+        <field name="name">Books.view.tree</field>
+        <field name="model">Books</field>
+        <!--
+            field that have all the attribute of model with it arch of view
+        -->
+        <field name="arch" type="xml">
+            <!--odoo update tree tag to list tag-->
+               <!--we can change the color of list,form fields or field by field 
+               by adding the attribute decoration-name="condition or var"
+                decoration-bf
+                decoration-it
+                decoration-danger
+                decoration-info
+                decoration-muted
+                decoration-primary
+                decoration-success
+                decoration-warning
+                here i will make list(tree) decoration-success if todays_day==todays-->
+            <list string="Testing_01 tree" decoration-success="todays_day==todays">
+                <!--
+                    model attributes to show
+                -->
+                <!-- some attributes like required="1" and readonly="1" won't work -->
+                <field name="title"></field>
+                <field name="description"></field>
+                <field name="copies"></field>
+                <field name="available"></field>
+                <field name="a"/>
+                <field name="b"/>
+                <field name="suming"/>
+                <field name="days_limits"/>
+                <field name="deadline"/>
+                <field name="todays"/>
+                <field name="todays_day"/>
+            </list>
+        </field>
+
+    </record>
+    <!--
+        showing models fields in form view with the model ir.ui.view
+    -->
+    <record id="books_form_view" model="ir.ui.view">
+        <!--
+            fields to describe the views
+        -->
+        <field name="name">Books.view.form</field>
+        <field name="model">Books</field>
+        <!--
+            field that have all the attribute of model with it arch of view
+        -->
+        <field name="arch" type="xml">
+            <form>
+                <!-- header for the header of the form-->
+                <header>
+                    <!-- showing status bar like a nav menu or maybe buttons-->
+                    <!-- state is a var in models/books.py like title ... -->
+                    
+                    <!--fields tags can have attribute widget to have different form of views
+                    like:statusbar
+                         monetary 
+                         percentage
+                         radio
+                         many2many_tags => this tag is used in relationship fields
+                         ...
+                    and ofc we can add the options attribute to have a dictionary depends on the widget
+                    exp:
+                    i will use this exp in model_b_many_2_many_views.xml
+                    <field name="x" wiget="many2many_tags" options="{'create':[['var','>','0']],'color_field':'1'}"
+                    -->
+                    <field name="state" widget="statusbar" />
+                </header>
+                <!-- sheet the body of form-->
+                <sheet>
+                    <!--
+                        model attributes to show
+                        in groups
+                    -->
+                    <group>
+                        <h1>
+                          <field name="title"></field>  
+                        </h1>
+                    </group>
+                    <group>
+                        <h1>
+                          <field name="description"></field>  
+                        </h1>
+                    </group>
+                    <group>
+                        <h1>
+                          <field name="copies"></field>  
+                        </h1>
+                    </group>
+                    <group>
+                        <h1>      
+                            <field name="available"></field>  
+                        </h1>
+                    </group>
+                    <!--notebook is a small botton field at the end of form-->
+                    <notebook>
+                        <list>
+                                  <field name="a"/>
+                                <field name="b"/>
+                                <field name="suming"/>
+                                <field name="days_limits"/>
+                                <field name="deadline"/>
+                                <field name="todays"/>
+                                <field name="todays_day"/>
+                                <!--in button tag we have name attribute to have the func and the type="object"-->
+                                <button string="Warning" type="object" name="warning_action"/>
+                                <button string="a=20 b=20" type="object" name="init_a_b"/>
+                                <!--view modes button didn't work-->
+                                <!--<button string="froming" type="object" name="froming_view"/>-->
+                                
+                            <button />
+                        </list>
+                    </notebook>
+                    <!--footer of form -->
+                    <footer>
+                        <button />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+
+    </record>
+    <!--
+        searching models fields in search view with the model ir.ui.view
+    -->
+    <record id="books_search_view" model="ir.ui.view">
+        <!--
+            fields to describe the views
+        -->
+        <field name="name">Books.view.search</field>
+        <field name="model">Books</field>
+        <!--
+            field that have all the attribute of model with it arch of view
+        -->
+        <field name="arch" type="xml">
+            <search>
+                <!--
+                    giving user search editable fields
+                -->
+                 <!--adding the attribute filter_domain to field here will help the 
+                 user finding something like he/she
+                is searching about in a var/vars
+                filter_domain="[('var','ilike',self)]"
+                filter_domain=[] tab of conditions
+                ilike key is like'=' or something like
+                self is the user input-->
+                <field name="title" filter_domain="[('title','ilike',self)]"/>
+                <field name="available" invisible="1"/>
+                <!--
+                    filtring the search with the domain
+                    tiltle = title
+                    domain="[('title','=','title')]"
+                -->
+                <filter name="filer_title" string="By title" domain="[('title','=','title')]"/>
+                <!--
+                    filtring the search with grouping by date
+                    context="[{'group_by':'available'}]"
+                -->
+                <filter name="filter_available" string="By availablety" content="[{'group_by':'available'}]"/>
+            </search>
+        </field>
+
+    </record>
+</odoo>
+<!--
+            now we need to create another file is for menus books_menus.xml 
+            add the views and menues files in the manifest on data:[] 
+            
+-->

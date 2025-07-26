@@ -1,0 +1,80 @@
+<odoo>
+    <!--menu view-->
+    <record id="model_b_many2many_menu_view" model="ir.actions.act_window">
+        <field name="name">Testing_01 Model B many2many</field>
+        <field name="res_model">model.b.many2many</field>
+        <field name="view_mode">list,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+    <!--tree view-->
+    <record id="model_b_many2many_list_view" model="ir.ui.view">
+        <field name="name">Testing_01 Model B many2many tree view</field>
+        <field name="model">model.b.many2many</field>
+        <field name="arch" type="xml">
+         <!--#another way to use is in the view.xml in the list/form view(tree) add 
+            the attribute default_order:
+            #<list string="tree view" default_order="var desc"> ... </list>
+            #or
+            #<list string="tree view" default_order="var"> ... </list>
+            #i will try this in model_b_many_2_many view-->
+            <list string="Model B many2many tree list" default_order="numb">
+                    <field name="numb"/>
+                    <field name="model_a_ids"/>
+                      <!--fields tags can have attribute widget to have different form of views
+                    like:statusbar
+                         monetary 
+                         percentage
+                         radio
+                         many2many_tags => this tag is used in relationship fields
+                         ...
+                    and ofc we can add the options attribute to have a dictionary depends on the widget
+                    exp:
+                    i will use this exp in model_b_many_2_many_views.xml
+                    <field name="x" wiget="many2many_tags" options="{'create':[['var','>','0']],'color_field':'1'}"
+                     for me the options tag has cause a bug so i removed-->
+                    <field name="model_a_ids" widget="many2many_tags" />
+            </list>
+        </field>
+    </record>
+    <!--form view-->
+    <record id="model_b_many2many_form_view" model="ir.ui.view">
+        <field name="name">Testing_01 Model B many2many form view</field>
+        <field name="model">model.b.many2many</field>
+        <field name="arch" type="xml">
+            <form string="Model B many2many form">
+                <sheet>
+                    <group>
+                        <field name="numb"/>
+                        <field name="model_a_ids"/>
+                          <!--fields tags can have attribute widget to have different form of views
+                    like:statusbar
+                         monetary 
+                         percentage
+                         radio
+                         many2many_tags => this tag is used in relationship fields
+                         ...
+                    and ofc we can add the options attribute to have a dictionary depends on the widget
+                    exp:
+                    i will use this exp in model_b_many_2_many_views.xml
+                    <field name="x" wiget="many2many_tags" options="{'create':[['var','>','0']],'color_field':'1'}"
+                     for me the options tag has cause a bug so i removed-->
+                    <field name="model_a_ids" widget="many2many_tags" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--search view-->
+    <record id="model_b_many2many_search_view" model="ir.ui.view">
+        <field name="name">Testing_01 Model B many2many search view</field>
+        <field name="model">model.b.many2many</field>
+        <field name="arch" type="xml">
+            <search string="Model B many2many tree list">
+                    <field name="numb"/>
+                    <field name="model_a_ids"/>
+                    <filter name="group_by_numb_of_model_b_many2many" context="{'group_by':'numb'}"/>
+                    <filter name="group_by_model_a_many2many" context="{'group_by':'model_a_ids'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

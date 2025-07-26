@@ -1,0 +1,5 @@
+<odoo>
+    <record id="model_prototype_inheritance2_manager" model="res.groups">
+        <field name="name">model prototype inheritance2 manager</field>
+    </record>
+</odoo>

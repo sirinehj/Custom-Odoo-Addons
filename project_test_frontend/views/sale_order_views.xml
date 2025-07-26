@@ -1,0 +1,27 @@
+<odoo>
+    <!--here i will try to inheritate from odoo the sale_order_view from sale-->
+    <!--so we need to add sale in the depends of the __manifest_.py-->
+    <record id="project_test_frontend_from_sale_order_view" model="ir.ui.view">
+        <field name="name">sale.form.view.inheritate.project_test_frontend</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+        <!--we will add templete in exemple.xml before notebook / page in sale views-->
+            <xpath expr="//notebook/page" position="before">
+                <!-- before anything we need to open page tag first to put our template exemple inside it
+                but first we need to create it in exemple.js and call it here with widget tag-->
+                <page>
+                    <!--before anything don't forget to add 'sale' in depends:[] _manifest_.py-->
+                    <!--don't forget to add the views in data:[]_manifest_.py-->
+                    <!--now we need to convert the template to a widget-->
+                    <!--that's why we need exemple.js-->
+                    <!--and here we call the widget with name attribute="Exemple"-->
+                    <!--you need to see this on sale odoo sale order views-->
+                    <!--update your moduel first-->
+                    <!--active dev mod go settings/technical/views and look for sale_order.form-->
+                    <widget name="Exemple"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,106 @@
+<odoo>
+    <!--menu view-->
+    <record id="model_b_one2many_menu_view" model="ir.actions.act_window">
+        <field name="name">Testing_01 Model B one2many</field>
+        <field name="res_model">model.b.one2many</field>
+        <field name="view_mode">list,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+    <!--tree view-->
+    <record id="model_b_one2many_list_view" model="ir.ui.view">
+        <field name="name">Testing_01 Model B one2many tree view</field>
+        <field name="model">model.b.one2many</field>
+        <field name="arch" type="xml">
+            <list string="Model B one2many tree list">
+              <!--#2 manuel ordering you let the user have the freedom of ordering:
+                    #_order="sequence desc"
+                    #sequence=fields.Integer(default=1)
+                    #then go to the view.xml inside the list/tree tag or form tag on the top add a field tag like this:
+                    #<list string="tree view"> 
+                    #   <field name="sequence" widget="handel"/>
+                    #   ... 
+                    # </list>
+                    #and model_b_one_2_many for manuel oredering
+
+                    it dose nothing for me
+                    -->
+                  <field name="sequence" widget="handle"/>
+                  <field name="numb"/>
+                  <field name="model_a_ids"/>
+                   <field name="max_fact"/>
+                   <!-- this time we will add vars from model a with 
+                        the var of thr relation "model_a_ids" and listed as tree or form as you want
+                        but for me i will use tree here-->
+                        <field name="model_a_ids">
+                            <list>
+                                <!-- here i can go to model a and give field tags with any vars of model a that i want-->
+                                <field name="name"/>
+                                <field name="fact"/>
+                            </list>
+                        </field>
+            </list>
+        </field>
+    </record>
+    <!--form view-->
+    <record id="model_b_one2many_form_view" model="ir.ui.view">
+        <field name="name">Testing_01 Model B one2many form view</field>
+        <field name="model">model.b.one2many</field>
+        <field name="arch" type="xml">
+            <form string="Model b one2many form">
+                <sheet>
+                 <!-- here will add the stat button that will redirect to the model A
+                    we will put it inside a div decorated by class="oe_button_box"-->
+                    <div class="oe_button_box">
+                        <!--here we will put the stat buttons
+                        in button tag attributes:
+                        name for func of action in my case => name="action_open_model_a_ids"
+                        type="object" =>always
+                        class="oe_stat_button" => to decorate
+                        icon="fa-list" => for icon list from fa-icons 
+                        string="Model A" => text of button -->
+                        <button name="action_open_model_a_ids"
+                            type="object"
+                            class="oe_stat_button"
+                            icon="fa-list"
+                            string="Model A">
+                                <!--inside the button we will add a field that will have
+                                the number of records of the A model 
+                                this field attribute will have name of var action
+                                and widget for view in my case =>
+                                name="model_b_one2many_count" widget="line_count"-->
+                                <field name="model_b_one2many_count" widget="line_count"/>
+                        </button>    
+                    </div>
+                    <group>
+                        <field name="numb"/>
+                        <field name="model_a_ids"/>
+                         <field name="max_fact"/>
+                         <!-- this time we will add vars from model a with 
+                        the var of thr relation "model_a_ids" and listed as tree or form as you want
+                        but for me i will use tree here-->
+                        <field name="model_a_ids">
+                            <list>
+                                <!-- here i can go to model a and give field tags with any vars of model a that i want-->
+                                <field name="name"/>
+                                <field name="fact"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--search view-->
+    <record id="model_b_one2many_search_view" model="ir.ui.view">
+        <field name="name">Testing_01 Model B one2many search view</field>
+        <field name="model">model.b.one2many</field>
+        <field name="arch" type="xml">
+            <search string="Model B one2many tree list">
+                  <field name="numb"/>
+                  <field name="model_a_ids"/>
+                  <filter name="group_by_numb_of_model_b_one2many" context="{'group_by':'numb'}"/>
+                  <filter name="group_by_model_a_one2many" context="{'group_by':'model_a_ids'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

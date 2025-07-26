@@ -1,0 +1,40 @@
+<odoo>
+    <!--menu view-->
+    <record id="model_prototype_inheritance2_menu" model="ir.actions.act_window">
+        <field name="name">Model Prototype Inheritance</field>
+        <field name="res_model">model.proto2</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <!--tree list view-->
+    <record id="model_prototype_inheritance2_list" model="ir.ui.view">
+        <field name="name">Model Prototype Inheritance list</field>
+        <field name="model">model.proto2</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="field1"/>
+                <field name="field2"/>
+                <field name="proto2"/>
+            </list>
+        </field>
+    </record>
+    <!--form view-->
+    <record id="model_prototype_inheritance2_form" model="ir.ui.view">
+        <field name="name">Model Prototype Inheritance form</field>
+        <field name="model">model.proto2</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="field1"/>
+                    </group>
+                    <group>
+                        <field name="field2"/>
+                    </group>
+                    <group>
+                        <field name="proto2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

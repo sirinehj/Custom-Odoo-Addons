@@ -1,0 +1,24 @@
+<!--
+    all books model menus are here
+-->
+<odoo>
+    <!--
+        first menu tag will be for root
+    -->
+    <menuitem id="root_level" name="root">
+    <!--
+        here the legend of the menu in the second level 
+    -->
+        <menuitem id="second_level" name="books">
+        <!--
+            here we nest the menu items that will have action on click from the views
+            action= id of the record tag in the views xml file
+        -->
+            <menuitem id="third_level" name="menu_item" action="test_record">
+            </menuitem>
+            <!--
+                add the views and menus files in the manifest on data:[] 
+            -->
+        </menuitem>
+    <menuitem/>
+</odoo>

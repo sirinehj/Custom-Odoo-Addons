@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="root_levl_model_delegation_inheritance1" name="Model Delegation1" action="root_levl_model_delegation_inheritance1_menu">
+    </menuitem>
+</odoo>

@@ -1,0 +1,41 @@
+<!--
+security file have the rules of user to edit create read and delete in database
+it need to be set the path in __manifest__.py on data:[]
+
+the rules will be in a file named ir.model.access.csv
+in the csv file you need to write rules in this form:
+notice:permitions is a value of 1 and 0
+id,name,model_id:id,groupe_id:id,permition_read,permition_write,permition_create,permition_unlink(delete)
+in my case read only permition
+books.access_proerties,access_books_properties,books.model,base.group_user,1,0,0,0
+now copy it and add it to books_manager too and they have all access with diffrent id and name
+by relacing base by the _name in the model file "Books" and group_user by record id "books_manager"
+then change the id of the rule and the name just add manager in the end
+books.access_proerties_manager,access_books_properties_manager,books.model,Books.books_manager,1,1,1,1
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+but for me the err security solved when i just make in the csv file this:
+id,name,model_id:id,groupe_id:id,permition_read,permition_write,permition_create,permition_unlink
+books.access_proerties,access_books_properties,books.model,base.group_user,1,0,0,0
+books.access_proerties,access_books_properties,books.model,,1,1,1,1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+then add it in the __manifest__.py on data:[]
+
+-->
+<!--
+    odoo tag is like html 
+-->
+<odoo>
+    <!--
+        record need an unique id and the model of users in odoo its res.groups
+    -->
+        <record id="books_mananger" model="res.groups">
+        <!--
+        fields will have the name of the group
+        -->
+            <field name="name">Books Managers</field>
+            <!--<field name="title">Alice in her magic world</field>
+            <field name="description">Alice adventure to become a high level healer</field>
+            <field name="copies">2</field>-->
+        </record>
+</odoo>

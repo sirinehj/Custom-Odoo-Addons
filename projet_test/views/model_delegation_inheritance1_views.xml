@@ -1,0 +1,32 @@
+<odoo>
+    <!--menu view-->
+    <record id="root_levl_model_delegation_inheritance1_menu" model="ir.actions.act_window">
+        <field name="name">Model Delegation1</field>
+        <field name="res_model">model.delegation1</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <!--tree list view-->
+    <record id="root_levl_model_delegation_inheritance1_list" model="ir.ui.view">
+        <field name="name">Model Delegation1 list</field>
+        <field name="model">model.delegation1</field>
+        <field name="arch" type="xml">
+            <list>  
+                <field name="dele1" />
+            </list>
+        </field>
+    </record>
+    <!--form view-->
+    <record id="root_levl_model_delegation_inheritance1_form" model="ir.ui.view">
+        <field name="name">Model Delegation1 form</field>
+        <field name="model">model.delegation1</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="dele1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

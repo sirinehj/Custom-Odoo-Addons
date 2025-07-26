@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="root_level_menu_proto1" name="Model Proto1 Elems" action="model_prototype_inheritance1_menu">
+    </menuitem>
+</odoo>

@@ -1,0 +1,7 @@
+# like any project _manifest_.py and _init_.py need to be alimented by the basics
+# but not like the backend we will leave the _init_.py empty for now and create
+# static/src/components
+# maybe he will show an exemple so he made static/src/components/exemple/exemple.js 
+# and static/src/components/exemple/exemple.xml
+# the first step was to create the first templet and imported in the odoo server at the login
+# so now we will fill exemple.xml and exemple.js

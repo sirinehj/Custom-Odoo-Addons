@@ -1,0 +1,5 @@
+<odoo>
+    <record id="model_delegation2_manager" model="res.groups">
+        <field name="name">model delegation2 manager</field>
+    </record>
+</odoo>
