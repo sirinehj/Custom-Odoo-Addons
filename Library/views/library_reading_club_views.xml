@@ -17,6 +17,15 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box" 
+                        name="button_box">
+                            <button name="action_open_meeting_ids" 
+                                    type="object" 
+                                    class="oe_stat_button"  
+                                    icon="fa-list">
+                                    <field name= "meeting_count" widget="line_count"/> 
+                            </button>
+                    </div>
                     <group>
                         <field name="name"/>
                         <field name="location"/>
