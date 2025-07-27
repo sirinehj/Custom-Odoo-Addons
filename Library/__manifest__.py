@@ -1,7 +1,7 @@
 {
     "name" : "Library",
     "summary" : "Test Module",
-    "Version" : "18.0.0.0.0",
+    "Version" : "18.0.1.0.0",
     "license": "LGPL-3",
     "data" : [
         "security/res_groups.xml",
