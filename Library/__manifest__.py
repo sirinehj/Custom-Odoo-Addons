@@ -14,4 +14,10 @@
     "demo" : [
         "demo/demo.xml"
     ],
+    "assets" : {
+        "web.assets_backend": [
+            "Library/static/src/components/**/*",
+
+        ]
+    }
 }
