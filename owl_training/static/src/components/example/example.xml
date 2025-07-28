@@ -3,5 +3,6 @@
     <t t-name="owl_training.Example" owl="1">
         <p>Hello OWL!</p>
         <button class="btn btn-primary">Click Me!</button>
+        <Child title="'Child of Example'" list="['Potato', 'Meows', 'Bubbles']" />
     </t>
 </templates>
