@@ -5,6 +5,7 @@ export class Child extends Component {
     static props = {
         title: { type: String},
         list: { type : Array},
+        slots: { type: Object },
     };
 }
 

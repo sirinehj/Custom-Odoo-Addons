@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates>
     <t t-name="owl_training.Child" owl="1">
+    <t t-slot="default"/>
         <p><t t-esc="props.title"/></p>
         <ol>
             <t t-foreach="props.list" t-as="item" t-key="item_index">
