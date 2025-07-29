@@ -1,4 +1,4 @@
-import { Component } from "@odoo/owl";
+import { Component, onWillStart, onWillDestroy } from "@odoo/owl";
 
 export class Child extends Component {
     static template = "owl_training.Child";
@@ -7,5 +7,11 @@ export class Child extends Component {
         list: { type : Array},
         slots: { type: Object },
     };
+
+
+    setup(){
+        onWillStart(() => console.log("Child onWillStart"));
+        onWillDestroy(() => alert("Destroying"));
+    }
 }
 
