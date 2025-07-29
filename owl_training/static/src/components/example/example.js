@@ -6,6 +6,15 @@ export class Example extends Component {
     static template = "owl_training.Example";
     static components = { Child };
 
+    setup(){
+        this.message="Hello!";
+    }
+
+
+    alertMessage(event){
+        alert(this.message);
+    }
+
 }
 
 registry.category("view_widgets").add("example", {
