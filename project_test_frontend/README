@@ -1,7 +1,17 @@
+# before stating make sure that all the backend is running correctly
+# and that you don't need to add anything to it
+# as a reminder of backend odoo
+#1 create a new module in /models the /models/my_model.py and /models/__init__.py
+#2 create /security/my_model_access.xml and create 
+#3 run odoo server to gives access rules then create /security/ir.model.access.csv with those rules
+#4 create /views/my_model_views.xml and /views/my_model_menus.xml 
+#5 never forget to update the __manifest__.py file 
+#6 make sure of __init__.py[from . import models] and /model/__init__.py [from . import my_model]
+#7 now you can add the frontend to avoid any kind of error
 # like any project _manifest_.py and _init_.py need to be alimented by the basics
-# but not like the backend we will leave the _init_.py empty for now and create
-# static/src/components
+# create static/src/components
 # maybe he will show an exemple so he made static/src/components/exemple/exemple.js 
 # and static/src/components/exemple/exemple.xml
 # the first step was to create the first templet and imported in the odoo server at the login
 # so now we will fill exemple.xml and exemple.js
+

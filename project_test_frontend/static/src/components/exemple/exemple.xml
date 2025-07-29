@@ -17,7 +17,7 @@
 -->
 <templates>
   <t t-name="project_test_frontend.Exemple" owl="1">
-    <p>Text here</p>
+    <p>Text here of exemple template</p>
     <button class="btn btn-primary">click me</button>
   </t>
 </templates>

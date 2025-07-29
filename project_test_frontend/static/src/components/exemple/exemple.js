@@ -16,7 +16,7 @@ export class Exemple extends Component{
 //we will converte our template in exemple.xml to a component
 //in the top dont forget to import the registry
 //import { registry } from "@web/core/registry";
-registry.category("view_widgets").add("project_test_frontend.Exemple",{ Component:Exemple});
+registry.category("view_widgets").add("Exemple",{ Component:Exemple});
 */
 
 import { registry } from "@web/core/registry";
@@ -28,7 +28,7 @@ export class Exemple extends Component {
     //now we need to go to the _manifest_.py
     //and add the files exemple in assets
 }
-registry.category("view_widgets").add("project_test_frontend.Exemple",{ component:Exemple});
+registry.category("view_widgets").add("Exemple",{ component:Exemple});
 
 
 //and this from copilot

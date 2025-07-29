@@ -3,12 +3,23 @@
     "summary":"Testing owl odoo",
     "license":"LGPL-3",
     "version":"1.0",
-    "depends":[
-        'sale',
-        ],
+    "depends":[],
     "data":[
+        #security
+                #fronting access
+                "security/fronting_access.xml",
+
+
+
+            "security/ir.model.access.csv",
         #views
-        "views/sale_order_views.xml",
+            #fronting model
+                "views/fronting_testing_02_views.xml",
+                "views/fronting_testing_02_menus.xml",
+                #inherited views
+                   "views/project_test_frontend_fronting_testing_02_views.xml",
+                
+            
     ],
     "demo":[],
    "assets":{
@@ -47,8 +58,5 @@
         #so if you have your model their that's mean you are load your assets in odoo bundles
         ]
     }
-         
-    
-
-
+   
 }
