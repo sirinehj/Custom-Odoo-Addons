@@ -14,10 +14,28 @@
     </templates>
     at the end we go to the js file generally the js and xml files here looks that they have 
     the same name so exemple.js and exemple.xml
+
+    now we will create another component that will be the child of this component "project_test_frontend.Exemple"
+    in another directory like static/src/components/child_exemple/child_exemple.xml and child_exemple.js
+    and we will use it in this template
+    first we will go to the child_exemple.js and we will make it as exemple.js without the register part
+    then we will go to the child_exemple.xml and we will make it like the exemple.xml
 -->
 <templates>
   <t t-name="project_test_frontend.Exemple" owl="1">
     <p>Text here of exemple template</p>
     <button class="btn btn-primary">click me</button>
+    <!--here we will include the child component and i will give it a prop named title
+    but the title is a string type so it needs to have "" for the attribute syntax and '' for the value
+    it will be like title="'string'"=> title="'Child Exemple Title'"-->
+    <!-- make sure that the tag name will be the same class name will be the same also in the exemple.js
+    at the part of static components = {Child1_Exemple};=> and that means in this xml we need to have
+    <Child1_Exemple/> otherwise it won't show up-->
+    <Child1_Exemple title="'Child Exemple Title'"/>
+    <!-- now we will go back to the child_exemple.js to add the props -->
+    <!--here i will add the new prop in the Child_Exemple component with a new title prop-->
+    <!-- it looks like we can only use one child at a time so i will comment the first one -->
+    <Child2_Exemple title="'Child Exemple List'" list="['Item 1', 'Item 2', 'Item 3']"/>
+    <!--now go back to the child_exemple.xml to print out the list-->
   </t>
 </templates>

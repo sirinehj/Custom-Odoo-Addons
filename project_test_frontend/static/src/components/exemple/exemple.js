@@ -21,12 +21,20 @@ registry.category("view_widgets").add("Exemple",{ Component:Exemple});
 
 import { registry } from "@web/core/registry";
 import { Component } from '@odoo/owl';
+import { Child1_Exemple } from "../child_exemple/child1_exemple";
+import { Child2_Exemple } from "../child_exemple/child2_exemple";
 
 export class Exemple extends Component {
     //template=t-name value in the exemple.xml in t tag 
     static template = "project_test_frontend.Exemple";
     //now we need to go to the _manifest_.py
     //and add the files exemple in assets
+    //here we will add the child component
+    //it will be like static components = { child_exemple};
+    //and automatically js will import the child_exemple.js for you
+    static components = {Child1_Exemple,Child2_Exemple};
+    //now we will go to the child_exemple.xml to add the out put of the child component
+    //here i will add the child2_exemple component
 }
 registry.category("view_widgets").add("Exemple",{ component:Exemple});
 
