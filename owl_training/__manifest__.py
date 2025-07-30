@@ -5,6 +5,7 @@
     "license": "LGPL-3",
     "depends" : [
         "sale",
+        "crm",
     ],
     "data" : [
         "views/owl_training_view.xml",
@@ -13,7 +14,7 @@
     "assets" : {
         "web.assets_backend": [
             "owl_training/static/src/components/**/*",
-
+            "owl_training/static/src/lib/**/*",
         ]
     }
 }

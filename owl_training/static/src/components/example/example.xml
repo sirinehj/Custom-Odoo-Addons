@@ -2,8 +2,8 @@
 <templates>
     <t t-name="owl_training.Example" owl="1">
         <p>Hello OWL!</p>
-        <button t-on-dblclick="alertMessage" class="btn btn-primary">Click Me!</button>
-        <Child title="'Child of Example'" list="['Potato', 'Meows', 'Bubbles']">
+        <button t-on-click="increment" t-on-dblclick="alertMessage" class="btn btn-primary">Click Me!</button>
+        <Child title="'Child of Example'" list="['Potato', 'Meows', 'Bubbles']" counter="this.state.counter">
             <span>This is a Slot</span>
         </Child>
     </t>

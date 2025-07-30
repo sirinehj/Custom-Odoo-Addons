@@ -3,10 +3,14 @@
     <t t-name="owl_training.Child" owl="1">
     <t t-slot="default"/>
         <p><t t-esc="props.title"/></p>
+        <h1>Counter: <t t-out="props.counter"/></h1>
         <ol>
             <t t-foreach="props.list" t-as="item" t-key="item_index">
                 <li t-out="item"/>
             </t>
         </ol>
+        <button class="btn btn-primary m-5" t-on-click="focusMyInput">Focus Input</button>
+        <input class="form-input input m-5" t-ref="my-input"/>
+        <t t-out="env.data"/>
     </t>
 </templates>
