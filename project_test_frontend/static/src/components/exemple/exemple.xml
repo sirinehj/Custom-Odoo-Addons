@@ -37,5 +37,42 @@
     <!-- it looks like we can only use one child at a time so i will comment the first one -->
     <Child2_Exemple title="'Child Exemple List'" list="['Item 1', 'Item 2', 'Item 3']"/>
     <!--now go back to the child_exemple.xml to print out the list-->
+    <!--now we will try the t-slot so t-slot it used to show information from the parent component
+    in the child component-->
+    <!--to do that i will create child3_exemple tag and component it will have the default slot-->
+    <!--we need to add child3_exemple in exemple.js-->
+    <!--now we can use the tag child3_exemple-->
+    <Child3_Exemple title="'Child 3 Exemple default slot'">
+      <!--inside the child3_exemple tag we will pass the information that we want-->
+        <p>Content for Child 3 Exemple default slot from exemple</p>
+      <!--now we go back to the child3_exemple.xml to add the default slot-->
+    </Child3_Exemple>
+    <!--for the t-set-slot we will use child4_exemple so let's create it-->
+    <!--now we need to add child4_exemple in exemple.js-->
+    <!--and add the slotschild4 in the exemple.js-->
+    <Child4_Exemple title="'Child 4 Exemple'">
+      <!--we will add the default slot, header, body and footer slots with t-set-slot-->
+        <t t-set-slot="default">
+          <div>Hello from slot exemple to child4</div>
+        </t>
+        <t t-set-slot="header">
+          <header>Header content from exemple to child4</header>
+        </t>
+        <t t-set-slot="body">
+          <section>Body content from exemple to child4</section>
+        </t>
+        <t t-set-slot="footer">
+          <footer>Footer content from exemple to child4</footer>
+        </t>
+
+    </Child4_Exemple>
+    <!--now i will create Child5_Exemple component that will have event effect-->
+    <!-- so we need to initialise it first ... and imported to the exemple.js and here ...
+    <Child5_Exemple/>
+    -->
+    <Child5_Exemple/>
+    <!--now i will add child6 for life component cycle so i will alert msg on start and destroy case
+    the rest are the same way-->
+    <Child6_Exemple/>
   </t>
 </templates>

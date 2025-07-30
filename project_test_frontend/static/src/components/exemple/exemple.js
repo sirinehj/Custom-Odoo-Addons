@@ -23,6 +23,10 @@ import { registry } from "@web/core/registry";
 import { Component } from '@odoo/owl';
 import { Child1_Exemple } from "../child_exemple/child1_exemple";
 import { Child2_Exemple } from "../child_exemple/child2_exemple";
+import { Child3_Exemple } from "../child_exemple/child3_exemple";
+import { Child4_Exemple } from "../child_exemple/child4_exemple";
+import { Child5_Exemple } from "../child_exemple/child5_exemple";
+import { Child6_Exemple } from "../child_exemple/child6_exemple";
 
 export class Exemple extends Component {
     //template=t-name value in the exemple.xml in t tag 
@@ -32,9 +36,18 @@ export class Exemple extends Component {
     //here we will add the child component
     //it will be like static components = { child_exemple};
     //and automatically js will import the child_exemple.js for you
-    static components = {Child1_Exemple,Child2_Exemple};
+    static components = {
+        Child1_Exemple,
+        Child2_Exemple,
+        Child3_Exemple,
+        Child4_Exemple,
+        Child5_Exemple,
+        Child6_Exemple
+    };
     //now we will go to the child_exemple.xml to add the out put of the child component
     //here i will add the child2_exemple component
+
+    
 }
 registry.category("view_widgets").add("Exemple",{ component:Exemple});
 

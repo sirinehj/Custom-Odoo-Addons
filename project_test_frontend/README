@@ -17,3 +17,5 @@
 
 #for going deeper in OWL there is a documentation in odoo github: https://github.com/odoo/owl/tree/master
 # for the t tag there is a documentation in odoo github: https://github.com/odoo/owl/blob/master/doc/reference/templates.md
+# for events xml use html events:https://www.w3schools.com/tags/ref_eventattributes.asp
+#component life :https://github.com/odoo/owl/blob/master/doc/reference/component.md
