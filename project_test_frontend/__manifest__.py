@@ -3,7 +3,9 @@
     "summary":"Testing owl odoo",
     "license":"LGPL-3",
     "version":"1.0",
-    "depends":[],
+    "depends":[
+        "crm"
+        ],
     "data":[
         #security
                 #fronting access
@@ -56,6 +58,9 @@
         #after that we go to 127.0.0.1/8069 install the model in odoo then enable dev mode with assets
         #then press F12 and go to source tab you will find an orange folder check if your static is inside
         #so if you have your model their that's mean you are load your assets in odoo bundles
+
+        #here i will add my services the same way [adding all auto]
+        "project_test_frontend/static/src/lib/*",
         ]
     }
    

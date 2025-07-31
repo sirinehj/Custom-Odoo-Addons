@@ -20,13 +20,21 @@ registry.category("view_widgets").add("Exemple",{ Component:Exemple});
 */
 
 import { registry } from "@web/core/registry";
-import { Component } from '@odoo/owl';
+import { Component, useState, useSubEnv } from '@odoo/owl';
 import { Child1_Exemple } from "../child_exemple/child1_exemple";
 import { Child2_Exemple } from "../child_exemple/child2_exemple";
 import { Child3_Exemple } from "../child_exemple/child3_exemple";
 import { Child4_Exemple } from "../child_exemple/child4_exemple";
 import { Child5_Exemple } from "../child_exemple/child5_exemple";
 import { Child6_Exemple } from "../child_exemple/child6_exemple";
+import { Child7_Exemple } from "../child_exemple/child7_exemple";
+import { Child8_Exemple } from "../child_exemple/child8_exemple";
+import { Child9_Exemple } from "../child_exemple/child9_exemple";
+import { Child10_Exemple } from "../child_exemple/child10_exemple";
+import { Child11_Exemple } from "../child_exemple/child11_exemple";
+import { Child12_Exemple } from "../child_exemple/child12_exemple";
+import { Child13_Exemple } from "../child_exemple/child13_exemple";
+import { Child14_Exemple } from "../child_exemple/child14_exemple";
 
 export class Exemple extends Component {
     //template=t-name value in the exemple.xml in t tag 
@@ -42,12 +50,35 @@ export class Exemple extends Component {
         Child3_Exemple,
         Child4_Exemple,
         Child5_Exemple,
-        Child6_Exemple
+        Child6_Exemple,
+        Child7_Exemple,
+        Child8_Exemple,
+        Child9_Exemple,
+        Child10_Exemple,
+        Child11_Exemple,
+        Child12_Exemple,
+        Child13_Exemple,
+        Child14_Exemple,
     };
     //now we will go to the child_exemple.xml to add the out put of the child component
     //here i will add the child2_exemple component
 
-    
+    //first things first we need the setup()
+    setup(){
+        //now we we define a var state to use the useState() and init counter to value 0
+        //need to import useState from "@odoo/owl" as well
+        this.state=useState({counter:0});
+        //here for child9 we will make the env 
+        //useSubEnv() dont need to be stored in var but needs to be imported from"@odoo/owl"
+        useSubEnv({data:"data for child9 from exemple env"});
+
+    }
+    //now we need a fun to increase the incounter
+    countring(e){
+        //it will only increase the counter by 1
+        this.state.counter++;
+        // at this point let's go to exemple.xml and let's make a button for it
+    }
 }
 registry.category("view_widgets").add("Exemple",{ component:Exemple});
 

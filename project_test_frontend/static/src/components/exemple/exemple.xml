@@ -74,5 +74,48 @@
     <!--now i will add child6 for life component cycle so i will alert msg on start and destroy case
     the rest are the same way-->
     <Child6_Exemple/>
+    <!--now i will create another child7 to create a state management the objective is to pass the state
+    from the parent exemple to the child7-->
+    <!--event on click ofc for the func  countring in exemple.js-->
+    <!--as a last step dont forget to add counter to child7
+    counter="this.state.counter"-->
+    <button class="btn btn-info" t-on-click="countring">Counter on click from exemple</button>
+    <Child7_Exemple counter="this.state.counter"/>
+    <!--ok for the ref i will do it in child8 and nothing is needed to be controlled by exemple i will 
+    just create a field child8 here-->
+    <Child8_Exemple/>
+    <!--in child9 i will make the envirement concept 
+    the envirement is used generally to pass infos from parent to childs
+    that's why we need exemple.js to create the env and to call it out in child9.xml simply-->
+    <!--so let's go to exemple.js-->
+    <Child9_Exemple/>
+    <!--so now we will talk about services first we need to create static/src/lib and import it in
+    _manifest_.py in assest:{} with our web.assest_backend[]-->
+    <!--services are made to load a function/logic(service) after we are inside the moduel in odoo if 
+    we dont use useService() in any of our templates js file[exemple.js,child1.js,...]
+    but if we use useService() in one of the templates js file it will run when we are in that level of 
+    view ["inside the template.xml in odoo using interface as a user to test code...."]
+    so to do that i will create 2 js files in static/src/services and import them in _manifest_.py 
+    1 => my_general_service_exemple_for_project.js(general service) that will alert something
+    2 => exemple_service.js to use it in child10.js so i need to create it-->
+    <Child10_Exemple/>
+    <!--i will create another child to use weather API
+    its from:https://open-meteo.com/en/docs
+    api:https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m
+    its free one i will make a service of it my_weather_service.js-->
+    <Child11_Exemple/>
+    <!--we know that rpc is used to for backend-odoo api so to use public mehtods from odoo
+    we can use the ORM service i will show it in child12-->
+    <Child12_Exemple/>
+    <!--the last thing is patch()/unpatch() and iheritate a template
+    well as in the odoo tutorial said we can't patch everything but the concept is
+    to override odoo moduels methods so for patch and unpatch i will try to create child13 that will 
+    patch and unpatch a func in child 12-->
+    <!--the func call patch_me and it only alert msg child13 will override the msg by button-->
+    <Child13_Exemple/>
+    <!--now child14 will inherit child13 template and override it-->
+    <Child14_Exemple>
+      <h3>child14</h3>
+    </Child14_Exemple>
   </t>
 </templates>

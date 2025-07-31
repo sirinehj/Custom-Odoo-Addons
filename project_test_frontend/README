@@ -15,7 +15,9 @@
 # the first step was to create the first templet and imported in the odoo server at the login
 # so now we will fill exemple.xml and exemple.js
 
+#you can install owl on your node.js : npm install @odoo/owl
 #for going deeper in OWL there is a documentation in odoo github: https://github.com/odoo/owl/tree/master
 # for the t tag there is a documentation in odoo github: https://github.com/odoo/owl/blob/master/doc/reference/templates.md
 # for events xml use html events:https://www.w3schools.com/tags/ref_eventattributes.asp
 #component life :https://github.com/odoo/owl/blob/master/doc/reference/component.md
+#services:https://docs.advanceinsight.dev/developer/reference/frontend/services.html
