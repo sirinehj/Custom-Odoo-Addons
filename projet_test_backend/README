@@ -1,0 +1,6 @@
+#1 create a new module in /models the /models/my_model.py and /models/__init__.py
+#2 create /security/my_model_access.xml and create 
+#3 run odoo server to gives access rules then create /security/ir.model.access.csv with those rules
+#4 create /views/my_model_views.xml and /views/my_model_menus.xml 
+#5 never forget to update the __manifest__.py file 
+#6 make sure of __init__.py[from . import models] and /model/__init__.py [from . import my_model]

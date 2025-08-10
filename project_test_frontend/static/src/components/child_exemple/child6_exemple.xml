@@ -1,0 +1,5 @@
+<templates>
+    <t t-name="project_test_frontend.Child6_Exemple" owl="1">
+        <p>child 6</p>
+    </t>
+</templates>

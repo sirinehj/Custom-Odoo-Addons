@@ -1,0 +1,58 @@
+<odoo>
+    <!--menus views-->
+        <!--menu list to form-->
+        <record id="employee_rif_2025_list_form_menu" model="ir.actions.act_window">
+            <field name="name">Employee List-Form</field>
+            <field name="res_model">employee.rif.2025</field>
+            <field name="view_mode">list,form</field>
+            
+        </record>
+        <!--menu list-->
+        <record id="employee_rif_2025_list_menu" model="ir.actions.act_window">
+            <field name="name">Employee List</field>
+            <field name="res_model">employee.rif.2025</field>
+            <field name="view_mode">list</field>
+            
+        </record>
+        <!--menu form-->
+        <record id="employee_rif_2025_form_menu" model="ir.actions.act_window">
+            <field name="name">Employee Form</field>
+            <field name="res_model">employee.rif.2025</field>
+            <field name="view_mode">form</field>
+            
+        </record>
+    <!--list view-->
+        <record id="employee_rif_2025_list" model="ir.ui.view">
+            <field name="name">Employee List</field>
+            <field name="model">employee.rif.2025</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="session_user"/>
+                    <field name="session_user_name"/>
+                    <field name="session_user_email"/>
+                    <field name="rh"/>
+                    <field name="employee_data_candidat"/>
+                </list>
+            </field>
+        </record>
+        <!--form view-->
+        <record id="employee_rif_2025_form" model="ir.ui.view">
+            <field name="name">Employee Form</field>
+            <field name="model">employee.rif.2025</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="session_user"/>
+                            <field name="session_user_name"/>
+                            <field name="session_user_email"/>
+                            <field name="rh"/>
+                            <field name="employee_data_candidat"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+</odoo>

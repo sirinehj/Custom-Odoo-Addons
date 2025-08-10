@@ -1,0 +1,5 @@
+<odoo>
+    <record id="employee_rif_2025_managers" model="res.groups">
+        <field name="name">employee_rif_2025_managers</field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+<odoo>
+    <record id="fronting_testing_02_manager" model="res.groups">
+        <field name="name">Fronting Testing 02 Manager</field>
+    </record>
+</odoo>

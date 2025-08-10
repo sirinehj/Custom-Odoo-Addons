@@ -1,0 +1,15 @@
+<odoo>
+    <menuitem id="root_level_employee_rif_2025_menu" name="Employee">
+        <menuitem id="second_level_employee_rif_2025_menu" name="views">
+            <menuitem id="thrid_level_employee_rif_2025_menu_form" name="From View"
+                action="employee_rif_2025_form_menu">    
+            </menuitem>
+            <menuitem id="thrid_level_employee_rif_2025_menu_list" name="List View"
+                action="employee_rif_2025_list_menu">    
+            </menuitem>
+            <menuitem id="thrid_level_employee_rif_2025_menu_list_form" name="From List to Form View"
+                action="employee_rif_2025_list_form_menu">    
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

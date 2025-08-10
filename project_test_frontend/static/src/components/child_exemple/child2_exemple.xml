@@ -1,0 +1,29 @@
+<templates>
+    <!--now i will try to add an ordred list here
+        so first we need to add another prop called list in the child_exemple.js let's go there
+        -->
+        <!--i will print out the list here it should be nested in ol tag(ordred list)
+        <ol>
+            first we need a t tag to loop through the list
+            <t t-foreach="props.list" t-as="i" t-key="items">
+            and that means we loop through the list with a key of i and i is inside the indexs of items
+                    here we can do it with 2 ways:
+                    1: <li><t t-out="i"/></li>
+                    2: <li t-out="i"/>
+                </t>
+        </ol>
+        -->
+    <t t-name="project_test_frontend.Child2_Exemple" owl="1">
+         <p>
+            <t t-out="props.title"/>
+            <ol>
+                <t t-foreach="props.list" t-as="item" t-key="items">
+                    <li><t t-out="item"/></li>
+                    <li t-out="item"/>
+                </t>
+            </ol>
+        </p>
+        <!--here the something use from the child2_exemple.js-->
+        <p> counter:<t t-out="something"/></p>
+    </t>
+</templates>

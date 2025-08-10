@@ -1,0 +1,12 @@
+<templates>
+    <t t-name="project_test_frontend.Child3_Exemple" owl="1">
+        <!--here we will add the default slot-->
+        <t t-slot="default">
+            <p>the default slot from the child 3 exemple</p>
+        </t>
+        <!--now don't forget to add slots in the props of child3_exemple.js-->
+        <!-- so as you can see here you can't see the <p> of the child "the default slot 
+        from the child 3 exemple" but you can only see the <p> tag from the exemple parent
+        "Content for Child 3 Exemple default slot from exemple"-->
+    </t>
+</templates>

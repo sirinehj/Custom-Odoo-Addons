@@ -1,0 +1,9 @@
+<odoo>
+    <menuitem id="root_level_test_candidat_rif_2025_menu" name="test_candidat">
+        <menuitem id="second_level_test_candidat_rif_2025_menu" name="views">
+            <menuitem id="thrid_level_test_candidat_rif_2025_menu_list_form" name="test_candidat"
+                action="test_candidat_rif_2025_menu">    
+            </menuitem>
+        </menuitem>
+    </menuitem>
+</odoo>

@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="fronting_testing_02_menu_root" name="Fronting Model">
+        <menuitem id="fronting_testing_02_menu_items" name="Fronting Menu" action="fronting_testing_02_menu_this_action">
+        </menuitem>
+    </menuitem>
+</odoo>

@@ -1,0 +1,50 @@
+<odoo>
+    <!--menu view-->
+    <record id="fronting_testing_02_menu_this_action" model="ir.actions.act_window">
+        <field name="name">Fronting</field>
+        <field name="res_model">fronting.testing_02</field>
+        <field name="view_mode">list,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+    <!-- list view-->
+    <record id="fronting_list_view" model="ir.ui.view">
+        <field name="name">fronting.list</field>
+        <field name="model">fronting.testing_02</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="field1"/>
+                <field name="field2"/>
+                <!-- field of the file name for field3 and field3_name in filename -->
+                <field name="field3" filename="field3_name"/>
+            </list>
+        </field>
+    </record>
+    <!-- form view-->
+    <record id="fronting_form_view" model="ir.ui.view">
+        <field name="name">fronting.form</field>
+        <field name="model">fronting.testing_02</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <notebook string="Fronting Notebook">
+                        <page string="Fronting Page 1">
+                            <group>
+                                <field name="field1"/>
+                            </group>
+                        </page>
+                        <page string="Fronting Page 2">
+                            <group>
+                                <field name="field2"/>
+                            </group>
+                        </page>
+                        <page string="Fronting Page 3">
+                            <group>
+                                <field name="field3" filename="field3_name"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

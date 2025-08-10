@@ -1,0 +1,25 @@
+<templates>
+        <!-- now go back to child_exemple.js and update the name of the template there -->
+        <!--the output of the child component will be rendered here by the tag t with the attribute t-out
+        it should be like t-out="props.prop1"=>t-out="props.title"-->
+        <!--<t t-out="props.title"/>-->
+        <!--now we run the project and we will see it on the view of inherited views-->
+        <!-- for me it worked without any errors but it doesn't show the title  for that i will try to
+        nest the tag <t t-out> inside a p tag-->
+        <!-- in the _manifest_.py if you put the path like 
+        "assets":{
+                "web.assets_backend":[
+                    "project_test_frontend/static/src/components/**/*",
+                ]
+        } 
+        it will automatically import any folders/files inside the components directory
+        otherwise you will have to import them manually one by one
+        i will add another p tag that has child_exemple here text to make sure that this template is on
+        the use by the parent template-->
+    <t t-name="project_test_frontend.Child1_Exemple" owl="1">
+        <p>Child_Exemple here text</p>
+        <p>
+            <t t-out="props.title"/>
+        </p>
+    </t>
+</templates>

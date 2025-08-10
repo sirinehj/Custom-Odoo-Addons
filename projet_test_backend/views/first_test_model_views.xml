@@ -1,0 +1,83 @@
+<odoo>
+    <!--menu view-->
+    <record id="first_test_model_menu" model="ir.actions.act_window">
+        <field name="name">Testing_01 menu</field>
+        <field name="res_model">first.test_model</field>
+        <field name="view_mode">list,form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="context">{'search_default_filter_group_by_name_of_model':True}</field>
+    </record>
+    
+    <!--tree view-->
+    <record id="first_test_model_tree" model="ir.ui.view">
+        <field name="name">Testing_01 tree view</field>
+        <field name="model">first.test_model</field>
+        <field name="arch" type="xml">
+            <list string="Testing_01 tree" decoration-success="todays_day==todays">
+                <button string="Warning" type="object" name="warning_action"/>
+                <button string="a=20 b=20" type="object" name="init_a_b"/>
+                <!--<button string="froming" type="object" name="froming_view"/>-->
+                <field name="name"/>
+                <field name="a"/>
+                <field name="b"/>
+                <field name="suming"/>
+                <field name="days_limits"/>
+                <field name="deadline"/>
+                <field name="todays"/>
+                <field name="todays_day"/>
+            </list>
+        </field>
+    </record>
+    
+    <!--form view-->
+    <record id="first_test_model_form" model="ir.ui.view">
+        <field name="name">Testing_01 form view</field>
+        <field name="model">first.test_model</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                    <group>
+                        <h1>
+                                <field name="name" />
+                                <field name="a"/>
+                                <field name="b"/>
+                                <field name="suming"/>
+                                <field name="days_limits"/>
+                                <field name="deadline"/>
+                                <field name="todays"/>
+                                <field name="todays_day"/>
+                               
+                        </h1>
+                    </group>
+                    <notebook>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </notebook>
+                    <footer>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--search view-->
+    <record id="first_test_model_search" model="ir.ui.view">
+        <field name="name">Testing_01 search view</field>
+        <field name="model">first.test_model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="[('name','ilike',self)]"/>
+                <filter name="filter_state_by_new_name_of_model" string="New_name_of_Testing_01" domain="[('state','=','draft')]"/>
+                <filter name="filter_state_by_confirmed_name_of_model" string="Confirmed_name_of_Testing_01" domain="[('state','=','confirmed')]"/>
+                <filter name="filter_state_by_done_name_of_model" string="Done_name_of_Testing_01" domain="[('state','=','done')]"/>
+                <filter name="filter_group_by_name_of_model" string="By Name_of_Testing_01" context="{'group_by':'name'}"/>
+            </search>
+        </field>
+    </record>
+</odoo>

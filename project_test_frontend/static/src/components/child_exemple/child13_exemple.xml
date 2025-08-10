@@ -1,0 +1,7 @@
+<templates>
+    <t t-name="project_test_frontend.Child13_Exemple" owl="1">
+        <h3>Child 13 will overide patch_me() of child12</h3>
+        <button t-on-click="patching">patch/unpatch child12</button>
+        
+    </t>
+</templates>

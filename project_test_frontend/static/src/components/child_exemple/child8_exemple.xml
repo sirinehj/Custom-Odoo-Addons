@@ -1,0 +1,12 @@
+<templates>
+    <t t-name="project_test_frontend.Child8_Exemple" owl="1">
+        <!--here i will just create an input and a button to focus the input on clicking it-->
+        <!--to know the input is focused we should see the border of it-->
+        <!--in the input i will use the ref is giving a reference to the element 
+        we need to use t-ref="ref"-->
+        <h3>from child 8</h3>
+        <input t-ref="input_ref" class="form-input input" placeholder="click on 'focus input' to focus me"/>
+        <!--dont forget to add t-on-click to active the focus effect-->
+        <button t-on-click="focusing_input">focus input</button>
+    </t>
+</templates>

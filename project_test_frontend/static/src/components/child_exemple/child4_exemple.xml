@@ -1,0 +1,9 @@
+<templates>
+    <t t-name="project_test_frontend.Child4_Exemple" owl="1">
+        <!--here we will add the slots with t-slot-->
+        <t t-slot="default"/>
+        <t t-slot="header"/>
+        <t t-slot="body"/>
+        <t t-slot="footer"/>
+    </t>
+</templates>        

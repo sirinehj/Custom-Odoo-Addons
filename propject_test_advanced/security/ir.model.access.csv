@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+propject_test_advanced.access_test_candidat_rif_2025,access_test_candidat_rif_2025,propject_test_advanced.model_test_candidat_rif_2025,base.group_user,1,0,0,0
+propject_test_advanced.access_test_candidat_rif_2025,access_test_candidat_rif_2025,propject_test_advanced.model_test_candidat_rif_2025,,1,1,1,1
+propject_test_advanced.access_employee_rif_2025,access_employee_rif_2025,propject_test_advanced.model_employee_rif_2025,base.group_user,1,0,0,0
+propject_test_advanced.access_employee_rif_2025,access_employee_rif_2025,propject_test_advanced.model_employee_rif_2025,,1,1,1,1

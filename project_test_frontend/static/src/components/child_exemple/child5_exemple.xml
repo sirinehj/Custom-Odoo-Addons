@@ -1,0 +1,7 @@
+<templates>
+    <t t-name="project_test_frontend.Child5_Exemple" owl="1">
+        <!--here i will add the button click event with t-on-click t-on-[event]-->
+        <button class="btn btn-primary" t-on-click="Clickme">Child 5 Exemple Button</button>
+        <!-- now in js let's define the Clickme method-->
+    </t>
+</templates>

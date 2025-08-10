@@ -1,0 +1,16 @@
+<templates>
+    <t t-name="project_test_frontend.Child14_Exemple" owl="1">
+    <!--by t-inherit-mode="extension" will override the template but t-inherit-mode="primary" will make a copy
+    of it-->
+    <h3>child14</h3>
+        <t t-name="project_test_frontend.Child14_Exemple_inheritate_project_test_frontend.Child13_Exemple"  
+        t-inherit="project_test_frontend.Child13_Exemple" 
+        t-inherit-mode="extension" owl="1">
+            <!--just like the views we have the xpath tag-->
+            <xpath expr="//button" position="after">
+                <!--now we add the elem after the button-->
+                <p>overing from child14</p>
+            </xpath>
+        </t>
+    </t>
+</templates>

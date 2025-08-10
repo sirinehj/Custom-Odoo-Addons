@@ -1,0 +1,6 @@
+<templates>
+    <t t-name="project_test_frontend.Child11_Exemple" owl="1">
+        <h3>Child 11 Weather</h3>
+        <p id="data_p"></p>
+    </t>
+</templates>

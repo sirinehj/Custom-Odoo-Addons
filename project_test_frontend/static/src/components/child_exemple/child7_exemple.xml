@@ -1,0 +1,7 @@
+<templates>
+    <t t-name="project_test_frontend.Child7_Exemple" owl="1">
+        <!--i will just show the counter states so i will just create a simple field define
+        props in chil7.js and in the exemle.js we have the works ...-->
+        <h3>Counter from child7:<t t-out="props.counter"/></h3>
+    </t>
+</templates>

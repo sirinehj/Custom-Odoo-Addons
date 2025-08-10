@@ -1,0 +1,7 @@
+<templates>
+    <t t-name="project_test_frontend.Child9_Exemple" owl="1">
+        <h3>from child 9</h3>
+        <!--here we will show out the data from t-out-->
+        <p>Env data:<t t-out="env.data"/></p>
+    </t>
+</templates>
